@@ -1,0 +1,74 @@
+<%-include("navbar.ejs")%>
+
+<div class="container-fluid">
+    <div class="row p-2">
+        <div class="col-md-12 p-2 text-center">
+            <h1 class="text-warning text-center">Employee of Hostel</h1>
+           
+        </div>
+        <div class="col-md-12 p-5  text-center">
+            <img class="img-fluid " src="assets\img\emp.avif" alt="">
+            
+        </div>
+        <div class="col-md-12 p-2  text-center">
+            <h3 class="text-success text-center">Deep clean bedrooms, public areas and other specific areas designated by management. Answer guests' queries when requested. Complete work projects, including laundry when required, and as assigned by Management. Clean and polishes floors, windows, mirrors, vending machines, etc.
+            </h3>
+           
+        </div>
+    </div>
+</div>
+<form action="/empappli" method="post" enctype="multipart/form-data">
+    <div class="container-fluid p-5 bg-white ">
+        <div class="row">
+            <div class="col-md-12  text-center">
+                <h3 class="text-warning text-center">Hostel Employee application Request</h3>
+            </div>
+            
+            <div class="col-md-12 mt-3">
+                Employee Name*
+                <input type="text" name="emp_name" class="form-control" required>
+            </div>
+           
+            <div class="col-md-6 mt-3">
+                Select Your Post*
+               <select name="emp_cat" class="form-control" required>
+                <option disabled selected >Select Platform</option>
+                <option >Hostel Watchman</option>
+                <option >Hostel Shape</option>
+                <option >Hostel Clener</option>
+                <option >Hostel Electrician</option>
+                <option>Other</option>
+               </select>
+            </div>
+            <div class="col-md-6 mt-3">
+                Employee Mobile Number*
+                <input type="number" name="emp_mno" class="form-control" required>
+            </div>
+            <div class="col-md-6 mt-3">
+                Employee Image*
+                <input type="file" name="emp_img" class="form-control" accept="Image/*" required>
+            </div>
+            <div class="col-md-6 mt-3">
+                Employee Addrees*
+                <textarea name="emp_addr" class="form-control" required></textarea>
+               
+            </div>
+            <div class="col-md-6 mt-3">
+                Employee Birth of Date*
+                <input type="date" name="emp_bd" class="form-control" required>
+            </div>
+            <div class="col-md-6 mt-3">
+                Employee adhar number*
+                <input type="number" name="emp_adhr" class="form-control" required>
+            </div>
+           
+            <div class="col-md-12 mt-3 text-center">
+                <button class="btn btn-primary ">send application request</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+<%-include("footer.ejs")%>
+

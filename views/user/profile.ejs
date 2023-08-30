@@ -1,0 +1,33 @@
+<%-include("navbar.ejs")%>
+<div class="container-fluid">
+    <div class="col-md-12 p-5 text-center">
+        <h1 class="text-success text-center"><b> Your Profile </b></h1>
+    </div>
+    
+    <hr>
+    <table class="table table-sm table-bordered p-5 mt-5 text-center">
+    <tr>
+   
+        <th>Your user_id</th>
+        <th>Your Name</th>
+        <th>Your Mobile Number</th>
+        <th>Your email</th>
+        <th>Your Password</th>
+        
+      
+    </tr>
+    <tr>
+       
+     <td><%=user.user_id %></td>
+     <td><%=user.user_name %></td>
+     <td><%=user.user_mobile %></td>
+     <td><%=user.user_email %></td>
+     <td><%=user.user_password %></td>
+     
+     
+    
+    </tr>
+</table>
+
+
+<%-include("footer.ejs")%>

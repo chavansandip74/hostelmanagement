@@ -1,0 +1,27 @@
+<%-include("navbar.ejs")%>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="text-danger text-center p-3"><b>Hostels Notice</b></h1>
+            </div>
+            <% for(var i=0;i<notices.length;i++) { %>
+                <div class="col-md-12">
+                    <h1 class="text-success  text-center">
+                        "<%=notices[i].notice_massage%>"
+                    </h1>
+                </div>
+                <div class="col-md-12 p-3 text-center">
+                  <img src="uploads/<%=notices[i].notice_img%>" width="220vw" margin-left="20px" alt="">
+                </div>
+                <div class="col-md-12 p-3">
+                    <h3 class="text-warning text-center">
+                        From:-<b><%=notices[i].writer_name%></b>
+                    </h3>
+                </div>
+                <hr>
+                <% }%>
+        </div>
+    </div>
+
+
+    <%-include("footer.ejs")%>

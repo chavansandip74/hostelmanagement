@@ -1,0 +1,65 @@
+<%- include('mnavbar.ejs')%>
+<div class="container-fluid p-5 ">
+    <div class="col-md-12  text-center">
+        <h1 class="text-warning text-center">Welcome To Shiyaram Hostel</h1>
+    </div>
+    <div class="col-md-12  text-center">
+        <div class="col-md-12  text-center">
+            <h1 class="text-primary text-center"><b>Hostel Rector</b></h1>
+        </div>
+    <table class="table table-sm table-bordered">
+    <tr>
+        <th>Delete</th>
+        <th>Sn</th>
+        <th>Rector name</th>
+        <th>Rector image</th>
+        <th>Rector information</th>
+    </tr>
+<% for(var i=0;i<rect.length;i++)
+{
+    %>
+    <tr>
+       
+        <td width="5%" style="white-space: nowrap;">
+            <a href="/manager/delete_rector/<%=rect[i].rector_id %>"><button class="btn btn-danger"><i class="fa fa-trash"></i></button></a>
+        </td>
+     <td><%=i+1%></td>
+     <td><%=rect[i].rector_name %></td>
+     <td width="150px">
+        <img src="/uploads/<%=rect[i].rector_img %>" width="150px" >
+        </td>
+     <td><%=rect[i].rector_info %></td>
+ 
+    </tr>
+<%}%>
+</table>
+</div>
+</div>
+<hr>
+<form action="/manager/save_rector" method="post" enctype="multipart/form-data">
+    <div class="container-fluid p-5 bg-white ">
+        <div class="row">
+            <div class="col-md-12  text-center">
+                <h1 class="text-warning text-center">Change Hostel Rector</h1>
+            </div>
+            <div class="col-md-12 mt-3">
+                Rector  Image 
+                <input type="file" name="rector_img" class="form-control" accept="Image/*">
+            </div>
+            <div class="col-md-12 mt-3">
+                Rector Name*
+                <input type="text" name="rector_name" class="form-control" required>
+            </div>
+            <div class="col-md-12 mt-3">
+                Rector info*
+                <input type="text" name="rector_info" class="form-control" required>
+            </div>
+            <div class="col-md-12 mt-3 text-center">
+                <button class="btn btn-primary ">SAVE Rector</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+<%- include('footer.ejs')%>

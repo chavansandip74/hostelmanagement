@@ -1,0 +1,95 @@
+<%- include('mnavbar.ejs')%>
+<div class="container-fluid">
+   
+    <div class="col-md-12 p-2 text-center">
+        <h3 class="text-danger text-center"> <b>U.G Student Application Request</b></h3>
+    </div>
+    <hr>
+    <table class="table table-sm table-bordered">
+    <tr>
+        <th>Approve</th>
+        <th>Delete</th>
+        <th>Sn</th>
+        <th>Student Name</th>
+        <th>Student degree</th>
+        <th>Student Mobile Number</th>
+        <th>Student image</th>
+        <th>Student Address</th>
+        <th>Student B-Date</th>
+        <th>Student Adhar-no</th>
+      
+    </tr>
+<% for(var i=0;i<studa.length;i++)
+{
+    %>
+    <tr>
+        <td width="5%" style="white-space: nowrap;">
+            <a href="/manager/ugapprove_stud/<%=studa[i].ugappli_id%>"><button class="btn btn-primary"><i class="fa fa-edit"></i></button></a>
+        </td>
+        <td width="5%" style="white-space: nowrap;">
+            <a href="/manager/delete_ugstudappli/<%=studa[i].ugappli_id %>"><button class="btn btn-danger"><i class="fa fa-trash"></i></button></a>
+        </td>
+     <td><%=i+1%></td>
+     <td><%=studa[i].student_name %></td>
+     <td><%=studa[i].student_digree %></td>
+     <td><%=studa[i].student_mno %></td>
+     <td width="150px">
+        <img src="/uploads/<%=studa[i].student_img %>" width="150px" >
+        </td>
+     <td><%=studa[i].student_addr %></td>
+     <td><%=studa[i].student_bd %></td>
+     <td><%=studa[i].student_adhr %></td>
+     
+    
+    </tr>
+<%}%>
+</table>
+<div class="col-md-12 p-2 text-center">
+    <h3 class="text-danger text-center"><b> P.G Student Application Request</b></h3>
+</div>
+<hr>
+<table class="table table-sm table-bordered">
+<tr>
+    <th>Approve</th>
+    <th>Delete</th>
+    <th>Sn</th>
+    <th>Student Name</th>
+    <th>Student degree</th>
+    <th>Student Mobile Number</th>
+    <th>Student image</th>
+    <th>Student Address</th>
+    <th>Student B-Date</th>
+    <th>Student Adhar-no</th>
+  
+</tr>
+<% for(var i=0;i<studa2.length;i++)
+{
+%>
+<tr>
+    <td width="5%" style="white-space: nowrap;">
+        <a href="/manager/pgapprove_stud/<%=studa2[i].pgappli_id%>"><button class="btn btn-primary"><i class="fa fa-edit"></i></button></a>
+    </td>
+    <td width="5%" style="white-space: nowrap;">
+        <a href="/manager/delete_pgstudappli/<%=studa2[i].pgappli_id %>"><button class="btn btn-danger"><i class="fa fa-trash"></i></button></a>
+    </td>
+ <td><%=i+1%></td>
+ <td><%=studa2[i].student_name %></td>
+ <td><%=studa2[i].student_digree %></td>
+ <td><%=studa2[i].student_mno %></td>
+ <td width="150px">
+    <img src="/uploads/<%=studa2[i].student_img %>" width="150px" >
+    </td>
+ <td><%=studa2[i].student_addr %></td>
+ <td><%=studa2[i].student_bd %></td>
+ <td><%=studa2[i].student_adhr %></td>
+ 
+
+</tr>
+<%}%>
+</table>
+</div>
+
+
+
+
+<%- include("footer.ejs")%>

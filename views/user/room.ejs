@@ -1,0 +1,43 @@
+<%-include("navbar.ejs")%>
+<div class="container-fluid">
+    <div class="col-md-12 p-5 text-center">
+        <h1 class="text-success text-center"><b>Your  Hostel Room and Details </b></h1>
+    </div>
+    <hr>
+    <table class="table table-sm table-bordered text-center p-5">
+    <tr>
+        <th>Sn</th>
+        <th>user_id</th>
+        <th>Room Number</th>
+        <th>Student Name</th>
+        <th>Student degree</th>
+        <th>Student Mobile Number</th>
+        <th>Student image</th>
+        <th>Student Address</th>
+        <th>Student B-Date</th>   
+        <th>Fees</th>
+
+    </tr>
+    
+    <tr>
+    
+     <td><%=1%></td>
+     <td><%=room.user_id %></td>
+     <td><%=room.room_no %></td>
+     <td><%=room.student_name %></td>
+     <td><%=room.student_digree %></td>
+     <td><%=room.student_mno %></td>
+     <td width="150px">
+        <img src="/uploads/<%=room.student_img %>" width="150px" >
+        </td>
+     <td><%=room.student_addr %></td>
+     <td><%=room.student_bd %></td>
+ 
+     <td><%=room.fees_amount %></td>
+    
+    </tr>
+</table>
+
+
+
+<%-include("footer.ejs")%>

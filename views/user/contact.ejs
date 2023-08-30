@@ -1,0 +1,65 @@
+<%-include("navbar.ejs")%>
+<div class="container-fluid">
+    <div class="row p-2">
+        <div class="col-md-12 p-2 text-center">
+            <h1 class="text-warning text-center">Contact to Rector</h1>
+           
+        </div>
+      
+    </div>
+</div>
+<form action="/massage" method="post" enctype="multipart/form-data">
+    <div class="container-fluid p-5 bg-white ">
+        <div class="row">
+            <div class="col-md-6  text-center">
+                <h3 class="text-warning text-center">Dairect Contact</h3>
+            </div>
+            <div class="col-md-6  text-center">
+                <h3 class="text-warning text-center">Send massage</h3>
+            </div>
+            <div class="col-md-6 mt-3">
+                <i class="fa fa-phone-square fa-3x" aria-hidden="true"></i>
+                <h3 class="text-danger text-center"> Rector Name</h3>
+                <h5 class="text-success text-center">Vishal Akolkar</h5>
+              
+            </div>
+            <div class="col-md-6 mt-3">
+                Entar Your Name*
+                <input type="text" name="m_name" class="form-control" required>
+            </div>
+            <div class="col-md-6 mt-3">
+                <i class="fa fa-unlock-alt fa-3x" aria-hidden="true"></i>
+                <h3 class="text-danger text-center"> Our Timing</h3>
+                <h5 class="text-success text-center">Mon - Sun : 09:00 AM - 09:00 PM</h5>
+              
+            </div>
+           
+            <div class="col-md-6 mt-3">
+                Select Your Catagory*
+               <select name="m_catagory" class="form-control" required>
+                <option disabled selected >Select Platform</option>
+                <option >U.G Hostel Student</option>
+                <option >P.G Hostel Student</option>
+                <option >Employee</option>
+                <option>Other</option>
+               </select>
+            </div>
+            <div class="col-md-6 mt-3">
+                <i class="fa fa-phone-square fa-3x" aria-hidden="true"></i>
+                <h3 class="text-danger text-center"> Call Us</h3>
+                <h5 class="text-success text-center">+91-7499743836</h5>
+              
+            </div>
+            <div class="col-md-6 mt-3">
+                Type Massage*
+                <textarea name="massage" class="form-control" required></textarea>
+            </div>
+            <div class="col-md-12 mt-3 text-center">
+                <button class="btn btn-primary ">Send Massage to Rector</button>
+            </div>
+    </div>
+</form>
+
+
+
+<%-include("footer.ejs")%>

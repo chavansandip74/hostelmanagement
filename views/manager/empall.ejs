@@ -1,0 +1,47 @@
+<%- include('mnavbar.ejs')%>
+<div class="container-fluid">
+    <div class="col-md-12 p-2 text-center">
+        <h3 class="text-warning  text-center"><b>Hostel Employee</b></h3>
+    </div>
+    <hr>
+    <table class="table table-sm table-bordered">
+    <tr>
+        <th>Delete</th>
+        <th>Sn</th>
+        <th>user_id</th>
+        <th>emp Name</th>
+        <th>emp Post</th>
+        <th>emp Salary</th>
+        <th>emp Mobile Number</th>
+        <th>emp image</th>
+        <th>emp Address</th>
+        <th>emp B-Date</th>
+
+    </tr>
+<% for(var i=0;i<emp.length;i++)
+{
+    %>
+    <tr>
+      
+        <td width="5%" style="white-space: nowrap;">
+            <a href="/manager/delete_emp/<%=emp[i].user_id %>"><button class="btn btn-danger"><i class="fa fa-trash"></i></button></a>
+        </td>
+     <td><%=i+1%></td>
+     <td><%=emp[i].user_id %></td>
+     <td><%=emp[i].emp_name %></td>
+     <td><%=emp[i].emp_post %></td>
+     <td><%=emp[i].emp_sal %></td>
+     <td><%=emp[i].emp_mno %></td>
+     <td width="150px">
+        <img src="/uploads/<%=emp[i].emp_img %>" width="150px" >
+        </td>
+     <td><%=emp[i].emp_addr %></td>
+     <td><%=emp[i].emp_bd %></td>
+ 
+   
+    
+    </tr>
+<%}%>
+</table>
+
+<%- include('footer.ejs')%>

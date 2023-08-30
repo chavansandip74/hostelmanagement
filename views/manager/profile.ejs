@@ -1,0 +1,26 @@
+<%- include('mnavbar.ejs')%>
+<div class="container-fluid">
+    <div class="col-md-12  text-center">
+        <h3 class="text-warning p-3"><b>Manager Profile</b></h3>
+    </div>
+    <div class="col-md-12  text-center">
+    <table class="table table-sm table-bordered">
+    <tr>
+        <th>Sn</th>
+        <th>manager Username</th>
+        <th>manager passsword</th>
+     
+    </tr>
+<% for(var i=0;i<manager.length;i++)
+{
+    %>
+    <tr>
+     <td><%=i+1%></td>
+     <td><%=manager[i].m_name %></td>
+     <td><%=manager[i].manager_password %></td>
+ 
+    </tr>
+<%}%>
+</table>
+</div>
+<%- include('footer.ejs')%>

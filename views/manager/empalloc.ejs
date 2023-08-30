@@ -1,0 +1,53 @@
+<%- include('mnavbar.ejs')%>
+<form action="/manager/save_emp" method="post" enctype="multipart/form-data">
+    <div class="container-fluid p-5 bg-white ">
+        <div class="row">
+            <div class="col-md-12  text-center">
+                <h3>Employee allocation</h3>
+            </div>
+            <div class="col-md-6 mt-3">
+                Employee Name*
+                <input type="text" name="emp_name" value="<%=empallo.emp_name%>" class="form-control" required>
+            </div>
+           
+            <div class="col-md-6 mt-3">
+                Employee Post*
+                <input type="text" name="emp_post" value="<%=empallo.emp_cat%>" class="form-control" required>
+            </div>
+            <div class="col-md-6 mt-3">
+                Employee Salary*
+                <input type="number" name="emp_sal" class="form-control" required>
+            </div>
+            <div class="col-md-6 mt-3">
+                Employee Mobile Number*
+                <input type="number" name="emp_mno" value="<%=empallo.emp_mno%>" class="form-control" required>
+            </div>
+        
+            <div class="col-md-6 mt-3">
+                Employee U.G user_id*
+                <input type="number" name="user_id" value="<%=empallo.user_id %>" class="form-control" required>
+            </div><div class="col-md-6 mt-3">
+                Student U.G Employee  Address*
+                <input type="text" name="emp_addr" value="<%=empallo.emp_addr%>" class="form-control" required>
+            </div>
+            <div class="col-md-6 mt-3">
+                Employee U.G Employee  Birth Of Date*
+                <input type="text" name="emp_bd" value="<%=empallo.emp_bd%>" class="form-control" required>
+            </div>
+            <div class="col-md-6 mt-3">
+                Employee U.G Employee  Image*
+                <input type="text" name="emp_img" value="<%=empallo.emp_img%>" class="form-control" required>
+            </div>
+            <div class="col-md-6 mt-3">
+                Employee U.G Employee  Adhar number*
+                <input type="number" name="emp_adhr" value="<%=empallo.emp_adhr%>" class="form-control" required>
+            </div>
+            <div class="col-md-12 mt-3 text-center">
+                <button class="btn btn-primary ">SAVE Employee</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+<%- include('footer.ejs')%>

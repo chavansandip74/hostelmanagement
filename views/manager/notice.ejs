@@ -1,0 +1,64 @@
+<%- include('mnavbar.ejs')%>
+
+<form action="/manager/save_notice" method="post" enctype="multipart/form-data">
+    <div class="container-fluid p-5 bg-white ">
+        <div class="row">
+            <div class="col-md-12  text-center">
+                <h1 class="text-danger text-center"> <b>Hostel Notice</b></h1>
+            </div>
+            <div class="col-md-12 mt-3">
+                Write a notice*
+                <textarea name="notice_massage" class="form-control" required></textarea>
+            </div>
+         
+           
+            <div class="col-md-12 mt-3">
+                Notice  Image 
+                <input type="file" name="notice_img" class="form-control" accept="Image/*">
+            </div>
+            <div class="col-md-12 mt-3">
+                Name of Writer*
+                <input type="text" name="writer_name" class="form-control" required>
+            </div>
+            <div class="col-md-12 mt-3 text-center">
+                <button class="btn btn-primary ">SAVE Student</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<div class="container-fluid p-3">
+    <div class="col-md-12  text-center">
+        <h3 class="text-success "><b>Recently added Hostel Notice</b></h3>
+    </div>
+    <br>
+    <div class="col-md-12  text-center">
+    <table class="table table-sm table-bordered">
+    <tr>
+        
+        <th>Delete</th>
+        <th>Sn</th>
+        <th>Notice massage</th>
+        <th>Notice image</th>
+        <th>Notice writer</th>
+    </tr>
+<% for(var i=0;i<notices.length;i++)
+{
+    %>
+    <tr>
+      
+        <td width="5%" style="white-space: nowrap;">
+            <a href="/manager/delete_notice/<%=notices[i].notice_id %>"><button class="btn btn-danger"><i class="fa fa-trash"></i></button></a>
+        </td>
+     <td><%=i+1%></td>
+     <td width="150px">
+        <img src="/uploads/<%=notices[i].notice_img %>" width="150px" >
+        </td>
+     <td><%=notices[i].notice_massage %></td>
+     <td><%=notices[i].writer_name %></td>
+    </tr>
+<%}%>
+</table>
+</div>
+</div>
+<%- include('footer.ejs')%>

@@ -1,0 +1,64 @@
+<%- include('mnavbar.ejs')%>
+<form action="/manager/save_ughostel" method="post" enctype="multipart/form-data">
+    <div class="container-fluid p-5 bg-white ">
+        <div class="row">
+            <div class="col-md-12  text-center">
+                <h3>U.G Hostel Student room allocation</h3>
+            </div>
+            <div class="col-md-6 mt-3">
+                Room Number*
+                <input type="number" name="room_no" class="form-control" required>
+            </div>
+            <div class="col-md-6 mt-3">
+                Student Name*
+                <input type="text" name="student_name" value="<%=stud.student_name%>" class="form-control" required>
+            </div>
+           
+            <div class="col-md-6 mt-3">
+                Student Digree*
+                <input type="text" name="student_digree" value="<%=stud.student_digree%>" class="form-control" required>
+            </div>
+            <div class="col-md-6 mt-3">
+                Student Mobile Number*
+                <input type="number" name="student_mno" value="<%=stud.student_mno%>" class="form-control" required>
+            </div>
+            <div class="col-md-6 mt-3">
+                Student U.G Fees Amount*
+                <input type="text" name="fees_amount" value="<%=ugfees.amount%>" class="form-control" required>
+            </div>
+            <div class="col-md-6 mt-3">
+                Student U.G Fees Transaction*
+                <input type="text" name="transaction_id" value="<%=ugfees.transaction_id%>" class="form-control" required>
+            </div>
+            <div class="col-md-6 mt-3">
+                Student U.G Fees date*
+                <input type="text" name="fees_pay_date" value="<%=ugfees.fees_pay_date%>" class="form-control" required>
+            </div>
+            <div class="col-md-6 mt-3">
+                Student U.G user_id*
+                <input type="number" name="user_id" value="<%=ugfees.user_id %>" class="form-control" required>
+            </div><div class="col-md-6 mt-3">
+                Student U.G student  Address*
+                <input type="text" name="student_addr" value="<%=stud.student_addr%>" class="form-control" required>
+            </div>
+            <div class="col-md-6 mt-3">
+                Student U.G student  Birth Of Date*
+                <input type="text" name="student_bd" value="<%=stud.student_bd%>" class="form-control" required>
+            </div>
+            <div class="col-md-6 mt-3">
+                Student U.G student  Image*
+                <input type="text" name="student_img" value="<%=stud.student_img%>" class="form-control" required>
+            </div>
+            <div class="col-md-6 mt-3">
+                Student U.G student  Adhar number*
+                <input type="number" name="student_adhr" value="<%=stud.student_adhr%>" class="form-control" required>
+            </div>
+            <div class="col-md-12 mt-3 text-center">
+                <button class="btn btn-primary ">SAVE Student</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+<%- include('footer.ejs')%>

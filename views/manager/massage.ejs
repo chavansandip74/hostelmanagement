@@ -1,0 +1,35 @@
+<%- include('mnavbar.ejs')%>
+<div class="container-fluid">
+    <div class="col-md-12 p-2 text-center">
+        <h1 class="text-success text-center"> <b>Resive Massage</b></h1>
+    </div>
+  
+    <hr>
+    <table class="table table-sm table-bordered">
+    <tr>
+        
+        <th>Delete</th>
+        <th>Sn</th>
+        <th>Sender Name</th>
+        <th>Sender Category</th>
+        <th>Sender Massage</th>
+       
+      
+    </tr>
+<% for(var i=0;i<massage.length;i++)
+{
+    %>
+    <tr>
+     
+        <td width="5%" style="white-space: nowrap;">
+            <a href="/manager/delete_massage/<%=massage[i].m_id %>"><button class="btn btn-danger"><i class="fa fa-trash"></i></button></a>
+        </td>
+     <td><%=i+1%></td>
+     <td><%=massage[i].m_name %></td>
+     <td><%=massage[i].m_catagory %></td>
+     <td><%=massage[i].massage %></td>
+    </tr>
+<%}%>
+</table>
+
+<%- include('footer.ejs')%>

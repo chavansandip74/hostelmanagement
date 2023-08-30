@@ -1,0 +1,50 @@
+<%- include('mnavbar.ejs')%>
+<div class="container-fluid">
+    <div class="col-md-12 p-2 text-center">
+        <h3 class="text-success text-center"> <b>U.G Hostel Student</b> </h3>
+    </div>
+    <hr>
+    <table class="table table-sm table-bordered">
+    <tr>
+        <th>Delete</th>
+        <th>Sn</th>
+        <th>user_id</th>
+        <th>Room Number</th>
+        <th>Student Name</th>
+        <th>Student degree</th>
+        <th>Student Mobile Number</th>
+        <th>Student image</th>
+        <th>Student Address</th>
+        <th>Student B-Date</th>
+        <th>Student Adhar-no</th>
+        <th>Fees</th>
+
+    </tr>
+<% for(var i=0;i<ughostel.length;i++)
+{
+    %>
+    <tr>
+      
+        <td width="5%" style="white-space: nowrap;">
+            <a href="/manager/delete_ugstud/<%=ughostel[i].user_id %>"><button class="btn btn-danger"><i class="fa fa-trash"></i></button></a>
+        </td>
+     <td><%=i+1%></td>
+     <td><%=ughostel[i].user_id %></td>
+     <td><%=ughostel[i].room_no %></td>
+     <td><%=ughostel[i].student_name %></td>
+     <td><%=ughostel[i].student_digree %></td>
+     <td><%=ughostel[i].student_mno %></td>
+     <td width="150px">
+        <img src="/uploads/<%=stud[i].student_img %>" width="150px" >
+        </td>
+     <td><%=stud[i].student_addr %></td>
+     <td><%=stud[i].student_bd %></td>
+     <td><%=stud[i].student_adhr %></td>
+     <td><%=ugfees[i].amount %></td>
+     
+    
+    </tr>
+<%}%>
+</table>
+
+<%- include('footer.ejs')%>

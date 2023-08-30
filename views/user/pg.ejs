@@ -1,0 +1,74 @@
+<%-include("navbar.ejs")%>
+
+<div class="container-fluid">
+    <div class="row p-2">
+        <div class="col-md-12 p-2 text-center">
+            <h1 class="text-warning text-center">Postgraduate Hostel</h1>
+           
+        </div>
+        <div class="col-md-12 p-5  text-center">
+            <img class="img-fluid " src="assets\img\hostel1.jpg" alt="">
+            
+        </div>
+        <div class="col-md-12 p-2  text-center">
+            <h3 class="text-success text-center">Hostel facility is available for boys students who are far off place with reasonably good mess and canteen facilities.The Hostel has a total number of 75 rooms. The rooms are allotted on sharing basis among two students. A separate furnished bed, study table & chair is provided ...
+            </h3>
+           
+        </div>
+    </div>
+</div>
+<form action="/pgappli" method="post" enctype="multipart/form-data">
+    <div class="container-fluid p-5 bg-white ">
+        <div class="row">
+            <div class="col-md-12  text-center">
+                <h3 class="text-warning text-center">P.G hostel application Request</h3>
+            </div>
+            
+            <div class="col-md-12 mt-3">
+                Student Name*
+                <input type="text" name="student_name" class="form-control" required>
+            </div>
+           
+            <div class="col-md-6 mt-3">
+                Student Digree*
+                <input type="text" name="student_digree" class="form-control" required>
+            </div>
+            <div class="col-md-6 mt-3">
+                Student Mobile Number*
+                <input type="number" name="student_mno" class="form-control" required>
+            </div>
+            <div class="col-md-6 mt-3">
+                Student Image*
+                <input type="file" name="student_img" class="form-control" accept="Image/*" required>
+            </div>
+            <div class="col-md-6 mt-3">
+                Student Addrees*
+                <textarea name="student_addr" class="form-control" required></textarea>
+               
+            </div>
+            <div class="col-md-6 mt-3">
+                Student Birth of Date*
+                <input type="date" name="student_bd" class="form-control" required>
+            </div>
+            <div class="col-md-6 mt-3">
+                Student adhar number*
+                <input type="number" name="student_adhr" class="form-control" required>
+            </div>
+           
+            <div class="col-md-12 mt-3 text-center">
+                <button class="btn btn-primary ">send application request</button>
+            </div>
+        </div>
+    </div>
+</form>
+<hr>
+<div class="col-md-12 p-5 text-center">
+    <h3 class="text-warning text-center"><b>if your application is request are accepted and rector gives approval then  click below approve request button to continue to paying hostel fees.</b></h3>
+</div>
+<div class="col-md-12 mt-3 text-center">
+    <a href="/pgcheckapprove"><button class="btn btn-primary ">Check approve request</button></a>
+</div>
+<hr>
+
+<%-include("footer.ejs")%>
+

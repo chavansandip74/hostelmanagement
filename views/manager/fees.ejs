@@ -1,0 +1,40 @@
+<%- include('mnavbar.ejs')%>
+
+<div class="container-fluid">
+    <div class="col-md-12 p-3 text-center">
+        <h3 class="text-secondary"><b>U.G Hostel Fees</b></h3>
+    </div>
+    <table class="table table-sm table-bordered">
+    <tr>
+        <th>Room Allocate</th>
+        <th>Delete</th>
+        <th>Sn</th>
+        <th>User id</th>
+        <th>ugapprove_id</th>
+        <th>amount</th>
+        <th>Fees Pay Date</th>
+        <th>Transaction id</th>
+    </tr>
+<% for(var i=0;i<ugfees.length;i++)
+{
+    %>
+    <tr>
+        <td width="5%" style="white-space: nowrap;">
+            <a href="/manager/room_allo/<%=ugfees[i].user_id%>"><button class="btn btn-primary"><i class="fa fa-edit"></i></button></a>
+        </td>
+        <td width="5%" style="white-space: nowrap;">
+            <a href="/manager/delete_ugfees/<%=ugfees[i].user_id %>"><button class="btn btn-danger"><i class="fa fa-trash"></i></button></a>
+        </td>
+     <td><%=i+1%></td>
+     <td><%=ugfees[i].user_id %></td>
+     <td><%=ugfees[i].ugapprove_id%></td>
+     <td><%=ugfees[i].amount %></td>
+     <td><%=ugfees[i].fees_pay_date %></td>
+     <td><%=ugfees[i].transaction_id %></td>
+     
+
+    </tr>
+<%}%>
+</table>
+
+<%- include('footer.ejs')%>

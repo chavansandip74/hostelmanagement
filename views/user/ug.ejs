@@ -1,0 +1,83 @@
+<%-include("navbar.ejs")%>
+
+<div class="container-fluid">
+    <div class="row p-2">
+        <div class="col-md-12 p-2 text-center">
+            <h1 class="text-warning text-center">Undergraduate Hostel</h1>
+           
+        </div>
+        <div class="col-md-12 p-2  text-center">
+            <img class="img-fluid " src="assets\img\ug.avif" alt="">
+            
+        </div>
+        <div class="col-md-12 p-2  text-center">
+            <h5 class="text-success text-center">Undergraduate Hostel is Study bedroom: A study room is a very important component for students’ hostel accommodation as it provides students with an avenue to study,live and sleep. It usually accommodates students for academic, psychological,social and economic reasons.
+                Bathroom: The bathroom for students’ hostel accommodation as a washroom for students. Depending on the structure of the hostel accommodation, one bathroom can serve more than one students.
+                 Laundry room: Laundry room in students’ hostel accommodation is a room set aside for the purpose of providing a place for students to watch their clothes. This usually a shared room for many students so it is necessary that it is large enough to accommodate a reasonable number of students at the same time.
+               </h5>
+        </div>
+    </div>
+</div>
+<form action="/ugappli" method="post" enctype="multipart/form-data">
+    <div class="container-fluid p-5 bg-white ">
+        <div class="row">
+            <div class="col-md-12  text-center">
+                <h3 class="text-warning text-center">U.G hostel application Request</h3>
+            </div>
+            
+            <div class="col-md-12 mt-3">
+                Student Name*
+                <input type="text" name="student_name" class="form-control" required>
+            </div>
+           
+            <div class="col-md-6 mt-3">
+                Student Digree*
+                <input type="text" name="student_digree" class="form-control" required>
+            </div>
+            <div class="col-md-6 mt-3">
+                Student Mobile Number*
+                <input type="number" name="student_mno" class="form-control" required>
+            </div>
+            <div class="col-md-6 mt-3">
+                Student Image*
+                <input type="file" name="student_img" class="form-control" accept="Image/*" required>
+            </div>
+            <div class="col-md-6 mt-3">
+                Student Addrees*
+                <textarea name="student_addr" class="form-control" required></textarea>
+               
+            </div>
+            <div class="col-md-6 mt-3">
+                Student Birth of Date*
+                <input type="date" name="student_bd" class="form-control" required>
+            </div>
+            <div class="col-md-6 mt-3">
+                Student adhar number*
+                <input type="number" name="student_adhr" class="form-control" required>
+            </div>
+           
+            <div class="col-md-12 mt-3 text-center">
+                <button class="btn btn-primary " onclick="checkr()">send application request</button>
+            </div>
+           
+        </div>
+    </div>
+</form>
+<hr>
+<div class="col-md-12 p-5 text-center">
+    <h3 class="text-warning text-center"><b>if your application is request are accepted and rector gives approval then  click below approve request button to continue to paying hostel fees.</b></h3>
+</div>
+<div class="col-md-12 mt-2 text-center">
+    <a href="/checkapprove"><button class="btn btn-primary ">Check approve request</button></a>
+</div>
+<hr>
+<script>
+    async function checkr(){
+        var data=await exe(`select user_id from ugapprove where user_id='${req.session.user_id}'`);
+        if(data!=undefined)
+        {
+            document.getElementById('btnr').innerHTML="requested";
+        }
+    }
+</script>
+<%-include("footer.ejs")%>
